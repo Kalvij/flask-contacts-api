@@ -17,5 +17,6 @@ def generate_openapi_yaml():
             print("Ошибка: не удалось получить спецификацию OpenAPI.")
 
 
+
 if __name__ == "__main__":
     generate_openapi_yaml()
