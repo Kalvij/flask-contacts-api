@@ -1,0 +1,62 @@
+definitions: {}
+info:
+  description: powered by Flasgger
+  termsOfService: /tos
+  title: A swagger API
+  version: 0.0.1
+paths:
+  /contacts:
+    post:
+      description: Создает контакт с именем и телефоном
+      parameters:
+      - in: body
+        name: body
+        required: true
+        schema:
+          properties:
+            name:
+              type: string
+            phone:
+              type: string
+          required:
+          - name
+          - phone
+          type: object
+      responses:
+        '201':
+          description: Контакт создан
+      summary: Создание нового контакта
+      tags:
+      - Contacts
+  /contacts/{contact_id}:
+    delete:
+      description: Удаляет контакт по ID
+      parameters:
+      - in: path
+        name: contact_id
+        required: true
+        type: integer
+      responses:
+        '200':
+          description: Контакт удалён
+        '404':
+          description: Контакт не найден
+      summary: Удаление контакта
+      tags:
+      - Contacts
+    get:
+      description: Возвращает контакт по ID
+      parameters:
+      - in: path
+        name: contact_id
+        required: true
+        type: integer
+      responses:
+        '200':
+          description: Контакт найден
+        '404':
+          description: Контакт не найден
+      summary: Получение контакта
+      tags:
+      - Contacts
+swagger: '2.0'
