@@ -103,5 +103,6 @@ def delete_contact(contact_id):
     return jsonify(deleted)
 
 
+
 if __name__ == "__main__":
     app.run(debug=True)
